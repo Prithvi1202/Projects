@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <local-tx-datasource>
+    <jndi-name>OracleDS</jndi-name>
+    <connection-url>
+        jdbc:oracle:thin:@localhost:1521:xe
+    </connection-url>
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <user-name>system</user-name>
+    <password>marlabs</password>
+    <valid-connection-checker-class-name>
+    org.jboss.resource.adapter.jdbc.vendor.OracleValidConnectionChecker
+    </valid-connection-checker-class-name>
+    <metadata>
+        <type-mapping>Oracle9i</type-mapping>
+    </metadata>
+    </local-tx-datasource>
+</datasources>

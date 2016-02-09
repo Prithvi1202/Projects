@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: soapweather
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Prithvi
+Implementation-Vendor-Id: soapweather
+Build-Jdk: 1.8.0_66
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

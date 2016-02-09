@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+
+function createXMLHttpRequest(){
+	  // See http://en.wikipedia.org/wiki/XMLHttpRequest
+	  // Provide the XMLHttpRequest class for IE 5.x-6.x:
+	  if( typeof XMLHttpRequest == "undefined" ) XMLHttpRequest = function() {
+	    try { return new ActiveXObject("Msxml2.XMLHTTP.6.0") } catch(e) {}
+	    try { return new ActiveXObject("Msxml2.XMLHTTP.3.0") } catch(e) {}
+	    try { return new ActiveXObject("Msxml2.XMLHTTP") } catch(e) {}
+	    try { return new ActiveXObject("Microsoft.XMLHTTP") } catch(e) {}
+	    throw new Error( "This browser does not support XMLHttpRequest." )
+	  };
+	  return new XMLHttpRequest();
+	}
+
+	function call() {
+		// location.href = "date.jsp";
+		var AJAX = createXMLHttpRequest();
+		AJAX.open("GET", "date.jsp");
+		AJAX.send("");
+		AJAX.onreadystatechange = handler;
+
+		function handler() {
+			if(AJAX.readyState == 4 && AJAX.status == 200) {
+				console.log(AJAX.responseText);
+				var divTag = document.getElementById("myid");
+				divTag.innerText = AJAX.responseText;
+			}
+		}
+				
+	}
+
+</script>
+
+</head>
+<body>
+	<input type="button" value="GET Date" onclick="call();" />
+	<div id = "myid">
+		The date comes here...
+	</div>
+</body>
+</html>
